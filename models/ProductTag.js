@@ -13,9 +13,15 @@ ProductTag.init(
       primaryKey: true,
       autoIncrement: true
     },
-    location_name: {
-      type: DataTypes.STRING,
-      allowNull: false
+    product_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      reference: {model: "product", key:"id"}
+    },
+    tag_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      reference: {model: "tag", key:"id"}
     }
   },
   {
